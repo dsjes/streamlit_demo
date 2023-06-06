@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  demo:
+    image: python:3.8
+    tty: true
+    restart: always
+    working_dir: /demo
+    volumes: 
+      - /home/tkb0004658/project/demo:/demo
