@@ -18,9 +18,9 @@ from dateutil.relativedelta import relativedelta
 def read_data(path):
     data = pd.read_csv(path)
     return data
-df_dcard = read_data("demo_data/dcard_demo_data.csv")
-df_gmap = read_data("demo_data/gmap_demo_data.csv")
-df_ptt = read_data("demo_data/ptt_demo_data.csv")
+df_dcard = read_data("dcard_demo_data.csv")
+df_gmap = read_data("gmap_demo_data.csv")
+df_ptt = read_data("ptt_demo_data.csv")
 df_經緯度 = pd.read_csv("gmap店點經緯度.csv")
 df_gmap = pd.merge(df_gmap,df_經緯度,on = 'name')
 df_gmap["lon"] = [i.split('@')[1].split(",")[1] for i in df_gmap['url']]
