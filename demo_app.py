@@ -706,31 +706,7 @@ with tab1:
             st.plotly_chart(fig,use_container_width=True)
 
         st.subheader("文字雲")
-        # data_brand1_now = data[data["品牌"] == option_競品1]
-        # data_brand1_now = data_brand1_now[(data_brand1_now["review_time_日期"] >= start_now) & (data_brand1_now["review_time_日期"] <= end_now)]
-        # data_brand2_now = data[data["品牌"] == option_競品2]
-        # data_brand2_now = data_brand2_now[(data_brand2_now["review_time_日期"] >= start_now) & (data_brand2_now["review_time_日期"] <= end_now)]
-        # data_品牌 = data_now[data_now["品牌"] == brand]
-        # result = ''.join(data_品牌['content'])
-        # result_brand1 = ''.join(data_brand1_now['content'])
-        # result_brand2 = ''.join(data_brand2_now['content'])
-        # openai.api_key = "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"
-        # def gpt_api(data):
-        #     completion = openai.Completion.create(
-        #         engine = "text-davinci-003",
-        #         prompt = f'以下是已經斷詞好的 Google Map的評論資料，忽略格式，專注在文字內容即可，你現在是一位補習班的行銷團隊，你要針對這些評論發覺潛在的公關危機，用列點的方式回傳你所看到的公關危機並統整給我，\
-        #         例如「服務態度不佳」、「教學品質不佳」、「設備老舊」等標籤，這次任務的目的是讓行銷團隊或是業務團隊了解哪些方面還需要改善，以提升潛在學生報名課程、上課意願。資料如下:{data}，\
-        #         若沒有資料，則回傳沒有資料就好，不要貿然給我假資料，要以列點的方式回答我。\
-        #         以下是一個例子，當有一則評論為「這間補習班負責人態度真差勁」，你需要判斷這是「服務態度不佳」',
-        #         temperature = 1,
-        #         max_tokens = 100,
-        #         n = 1,
-        #         stream=False)
-        #     return completion.choices[0].text
-        
-        # st.write(f'{brand}:{gpt_api(result)}')
-        # st.write(f'{option_競品1}:{gpt_api(result_brand1)}')
-        # st.write(f'{option_競品2}:{gpt_api(result_brand2)}')
+
         data_品牌 = data_now[data_now["品牌"]== brand]
         店點_list = st.multiselect(f"**{brand}**",data_品牌["name"].unique(),max_selections = 4)
         n_店點 = len(店點_list)
